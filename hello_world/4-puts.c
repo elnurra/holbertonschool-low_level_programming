@@ -1,12 +1,13 @@
 
 
 #include <stdio.h>
+
 /**
- *  * main function - print for console "Programming is like building a multilingual
+ *  * main - Prints "Programming is like building a multilingual
  *   *                puzzle, followed by a new line.
  *    *
- *     * Return: means returns Always 0 for function.
-*      */
+ *     * Return: Always 0.
+ *      */
 
 int main(void)
 {
