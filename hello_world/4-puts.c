@@ -1,4 +1,7 @@
-
+/*
+ *  * File: 4-puts.c
+ *   * Auth: Elnur Azizov
+ *    */
 #include <stdio.h>
 
 /**
