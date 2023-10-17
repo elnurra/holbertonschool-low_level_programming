@@ -3,8 +3,10 @@
 
 /*
  * main - Prints the digits in.
+ *
  * Return: Always 0.
 */
+
 int main(void)
 {
 	int num1 = 0, num2 = 0;
@@ -16,8 +18,8 @@ int main(void)
 		 putchar((num1 % 10) + '0');
 		 putchar((num2 % 10) + '0');
 
-		 if (num1 == 9 && num2 == 9)
-			continue;
+		 if (num1 == 8 && num2 == 9)
+			break;
 		putchar(',');
 		putchar(' ');
 		}
