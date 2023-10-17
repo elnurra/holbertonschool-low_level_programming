@@ -1,8 +1,8 @@
-
+#include <stdlib.h>
 #include <stdio.h>
 
-/*
- * main - Prints the digits in.
+/**
+ *  main - Prints the digits in.
  *
  * Return: Always 0.
 */
