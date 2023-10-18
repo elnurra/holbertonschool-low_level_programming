@@ -1,11 +1,14 @@
+
 #include "main.h"
 
 /**
- * main -Etry point
- * Return Always 0.
- */
+ *main - function prints text as output
+ *
+ *Return:return 0
+*/
 
-int main(void){
+int main(void)
+{
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
@@ -16,6 +19,5 @@ int main(void){
 	_putchar('r');
 	_putchar('\n');
 
-		return 0;
 }
 
