@@ -5,10 +5,11 @@ int main(void)
     int F0 = 0;
     int F1 = 1;
     int Fn = 0;
+    int i;
 
     printf("%d, %d", F0, F1);
 
-    for (int i = 2; Fn <= 50; i++)
+    for (i = 2; Fn <= 50; i++)
     {
         Fn = F0 + F1;
         F0 = F1;
