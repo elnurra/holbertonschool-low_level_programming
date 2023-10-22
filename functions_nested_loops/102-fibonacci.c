@@ -9,7 +9,7 @@ int main(void)
 {
 	int n = 50;
 	long F0 = 1;
-	long F1 = 1;
+	long F1 = 2;
 	long Fn;
 	int i;
 
