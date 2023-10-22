@@ -1,50 +1,38 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_times_table - Prints n-size times table, starting with 0
- * @n: Size of times table
+ * print_times_table - Prints the n times table, starting with 0.
+ * @n: The number for which the times table is printed.
  */
-
 void print_times_table(int n)
 {
-	int i, j;
+	int i, j, result;
 
-	if (n < 15)
+	if (n < 0 || n > 15)
+		return;
+
+	for (i = 0; i <= n; i++)
 	{
-		for (j = 0; i <= n; i++)
+		for (j = 0; j <= n; j++)
 		{
-			for (j = 0; j <= n; j++)
+			result = i * j;
+
+			if (j == 0)
 			{
-				if (j == 0)
-				{
-					_putchar('0');
-				}
-				else if (i * j < 10)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(i * j + '0');
-				}
-				else if (i * j < 100)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((i * j) / 10 + '0');
-					_putchar((i * j) % 10 + '0');
-				}
-				else
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar((i * j) / 100 + '0');
-					_putchar((i * j) % 100 / 10 + '0');
-					_putchar((i * j) % 10 + '0');
-				}
+				printf("%d", result);
 			}
-			_putchar('\n');
+			else
+			{
+				if (result < 10)
+					printf(",\t  %d", result);
+				else if (result < 100)
+					printf(",\t %d", result);
+				else
+					printf(",\t%d", result);
+			}
 		}
+		printf("\n");
 	}
 }
+
