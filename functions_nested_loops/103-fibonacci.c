@@ -13,11 +13,8 @@ int main(void)
 	long F1 = 2;
 	long Fn;
 	int i;
-	long result;
+	long result = 0;
 
-	printf("%ld, %ld", F0, F1);
-
-	printf("\n");
 	for (i = 2; i < n; i++)
 	{
 		Fn = F0 + F1;
@@ -28,12 +25,11 @@ int main(void)
 			if (Fn % 2 == 0)
 			{
 				result += Fn;
-				printf("%ld, ", result);
-				printf("\n");
 			}
 		}
+		
 	}
 
-	printf("\n");
+	printf("%ld\n", result);
 	return (0);
 }
