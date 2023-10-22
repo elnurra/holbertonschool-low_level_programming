@@ -1,9 +1,10 @@
 #include <stdio.h>
-/**
- * main: prints code
- * Return: always: 0
-*/
 
+/**
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
 
 int main(void)
 {
