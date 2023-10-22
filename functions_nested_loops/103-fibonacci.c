@@ -8,14 +8,14 @@
 
 int main(void)
 {
-	int n = 33;
+	int n = 31;
 	long F0 = 1;
 	long F1 = 2;
 	long Fn;
 	int i;
-	long result = 0;
+	long result = 2;
 
-	for (i = 2; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
 		Fn = F0 + F1;
 		F0 = F1;
@@ -27,9 +27,7 @@ int main(void)
 				result += Fn;
 			}
 		}
-		
 	}
-
 	printf("%ld\n", result);
 	return (0);
 }
