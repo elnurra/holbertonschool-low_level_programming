@@ -1,27 +1,29 @@
 #include <stdio.h>
+/**
+ * main: prints code
+ * Return: always: 0
+*/
+
 
 int main(void)
 {
-    int F0 = 0;
-    int F1 = 1;
-    int Fn = 0;
-    int i;
+	int n = 50;
+	long long F0 = 1;
+	long long F1 = 1;
+	long long Fn;
 
-    printf("%d, %d", F0, F1);
+	printf("%lld, %lld", F0, F1);
 
-    for (i = 2; Fn <= 50; i++)
-    {
-        Fn = F0 + F1;
-        F0 = F1;
-        F1 = Fn;
+	for (int i = 2; i < n; i++)
+	{
+		Fn = F0 + F1;
+		F0 = F1;
+		F1 = Fn;
 
-        if (Fn <= 50)
-        {
-            printf(", %d", Fn);
-        }
-    }
+		printf(", %lld", Fn);
+	}
 
-    printf("\n");
-    return 0;
+	printf("\n");
+	return (0);
 }
 
