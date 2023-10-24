@@ -11,6 +11,7 @@ int _atoi(char *s)
 	int sign = 1;
 	int result = 0;
 	int i = 0;
+	int foundDigit = 0;
 
 	while (s[i] != '\0')
 	{
@@ -20,9 +21,10 @@ int _atoi(char *s)
 		}
 		else if (s[i] >= '0' && s[i] <= '9')
 		{
+			foundDigit = 1;
 			result = (result * 10) + (s[i] - '0');
 		}
-		else if (result > 0)
+		else if (foundDigit)
 		{
 			break;
 		}
