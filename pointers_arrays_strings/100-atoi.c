@@ -1,42 +1,31 @@
-#include "main.h"
-#include <limits.h>
 /**
- * _atoi - Convert a string to an integer
- * @s: The string to convert
- *
- * Return: The integer value of the string
- */
+* _atoi - Convert string to an integer.
+* @s: Pointer to a character string.
+*
+* Return: void.
+*/
+
 int _atoi(char *s)
 {
-	int sign = 1;
-	long result = 0;
-	int i = 0;
-	int foundDigit = 0;
+	int sign;
+	unsigned int num;
+	char *temp;
 
-	while (s[i] != '\0')
+	temp = s;
+	num = 0;
+	sign = 1;
+	while (*temp != '\0' && (*temp < '0' || *temp > '9'))
 	{
-		if (s[i] == '-')
-		{
+		if (*temp == '-')
 			sign *= -1;
-		}
-		else if (s[i] >= '0' && s[i] <= '9')
-		{
-			foundDigit = 1;
-			result = (result * 10) + (s[i] - '0');
-		}
-		else if (foundDigit)
-		{
-			break;
-		}
-		i++;
+		temp++;
 	}
-
-	if (result * sign > INT_MAX) {
-		return INT_MAX;
-	} else if (result * sign < INT_MIN) {
-		return INT_MIN;
+	if (*temp != '\0')
+	{
+		do {
+			num = num * 10 + (*temp - '0');
+			temp++;
+		} while (*temp >= '0' && *temp <= '9');
 	}
-
-	return (int)(result * sign);
+	return (num * sign);
 }
-
