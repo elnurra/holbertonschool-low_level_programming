@@ -3,24 +3,14 @@
 #include <ctype.h>
 
 /**
- * main - Calculates the minimum number of coins needed to make change
- * @argc: The number of arguments passed to the program
- * @argv: An array of pointers to the arguments
+ * divide_helper - Helper function to perform division
+ * @cents: The amount of money to be divided
  *
- * Return: 0 on success, 1 on error
+ * Return: The minimum number of coins needed
  */
-int main(int argc, char *argv[])
+int divide_helper(int cents)
 {
-	int i, cents, coins = 0;
-
-	if (argc != 2)
-	{
-		printf("Error\n");
-		return (1);
-	}
-
-	cents = atoi(argv[1]);
-
+	int coins = 0;
 	if (cents < 0)
 	{
 		printf("0\n");
@@ -56,8 +46,28 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	printf("%d\n", coins);
+	return (coins);
+}
 
+/**
+ * main - Calculates the minimum number of coins needed to make change
+ * @argc: The number of arguments passed to the program
+ * @argv: An array of pointers to the arguments
+ *
+ * Return: 0 on success, 1 on error
+ */
+int main(int argc, char *argv[])
+{
+	int cents = atoi(argv[1]);
+	int coins = divide_helper(cents);
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return 1;
+	}
+	printf("%d\n", coins);
 	return (0);
 }
+
 
