@@ -11,6 +11,7 @@
 int divide_helper(int cents)
 {
 	int coins = 0;
+
 	if (cents < 0)
 	{
 		printf("0\n");
@@ -64,10 +65,8 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return 1;
+		return (1);
 	}
 	printf("%d\n", coins);
 	return (0);
 }
-
-
