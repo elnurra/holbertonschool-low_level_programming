@@ -1,19 +1,14 @@
 section .data
-    hello db 'Hello, World', 0xA
-    hello_len equ $ - hello
+    msg db "Hello, World!", 0Dh, 0Ah, '$' ; '$' terminates the string
 
 section .text
-    global _start
+    org 100h ; origin, this is a COM file
 
-_start:
-    ; write hello message
-    mov eax, 1
-    mov edi, 1
-    mov esi, hello
-    mov edx, hello_len
-    syscall
+start:
+    mov dx, msg  ; load offset of msg into dx.
+    mov ah, 09h  ; print function is 9.
+    int 21h      ; do it!
 
-    ; exit program
-    mov eax, 60
-    xor edi, edi
-    syscall
+    mov ah, 4Ch  ; exit function is 4Ch.
+    int 21h      ; do it!
+
