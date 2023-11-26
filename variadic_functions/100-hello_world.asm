@@ -1,14 +1,27 @@
 section .data
-    msg db "Hello, World!", 0Dh, 0Ah, '$' ; '$' terminates the string
+    hello db 'Hello, World', 10  ; 10 is the ASCII code for newline
 
 section .text
-    org 100h ; origin, this is a COM file
+    global main
 
-start:
-    mov dx, msg  ; load offset of msg into dx.
-    mov ah, 09h  ; print function is 9.
-    int 21h      ; do it!
-
-    mov ah, 4Ch  ; exit function is 4Ch.
-    int 21h      ; do it!
+main:
+    ; File descriptor: 1 (stdout)
+    mov rdi, 1
+    
+    ; Buffer address (hello)
+    mov rsi, hello
+    
+    ; Length of the string
+    mov rdx, 13
+    
+    ; System call number for write: 1
+    mov rax, 1
+    
+    ; Invoke the system call
+    syscall
+    
+    ; Exit the program with exit code 0
+    mov rax, 60         ; System call number for exit
+    xor rdi, rdi        ; Exit code 0
+    syscall
 
